@@ -1,4 +1,17 @@
+# unity ignore dir
 Library/
 Temp/
 Logs/
 UserSettings/
+
+# unity ignore file
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.meta
+*.tmp
+ 
+# need include the meta of file
+!*.*.meta
