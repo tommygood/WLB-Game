@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI dialogueText;  // Reference to the text UI
     public Button nextButton;             // Button to continue the conversation
+    public GameObject canvas;
 
     public List<Dialogue> dialogues;      // List of dialogues
     private int currentDialogueIndex = 0;
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+      Debug.Log(dialogueText.fontSize);
         nextButton.onClick.AddListener(DisplayNextSentence);
         StartConversation();
     }
@@ -64,5 +66,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = "";
         nextButton.gameObject.SetActive(false);
+        canvas.SetActive(false);
+        Debug.Log("End of Conversation");
     }
 }
