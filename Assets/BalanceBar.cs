@@ -19,8 +19,11 @@ public class BalanceBar : MonoBehaviour
 
     void Update()
     {
-        // Update balance dynamically using player input (or replace with game logic)
-        balance = Mathf.Clamp(balance + Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, -1f, 1f);
+    }
+
+    public void setBalanceBar(float val) {
+      // Update balance dynamically using player input (or replace with game logic)
+        balance += val;
 
         // Move pointer based on balance
         float newX = Mathf.Lerp(-maxWidth / 2, maxWidth / 2, (balance + 1) / 2);

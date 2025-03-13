@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; // Singleton instance
     public BalanceBar balanceBar;
     public float gameoverThreshold = 0.25f; // Use camelCase for consistency
+    public Stages stages;
 
     void Awake()
     {
@@ -20,7 +21,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+      CheckStage();
         CheckGameOver();
+    }
+
+    public void CheckStage() {
+      stages.Play();
     }
 
     public void CheckGameOver()

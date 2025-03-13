@@ -21,12 +21,12 @@ public class DialogueManager : MonoBehaviour
     public List<Dialogue> dialogues;      // List of dialogues
     private int currentDialogueIndex = 0;
     private int currentSentenceIndex = 0;
+    private Stages stages;
 
     void Start()
     {
-      Debug.Log(dialogueText.fontSize);
         nextButton.onClick.AddListener(DisplayNextSentence);
-        StartConversation();
+        stages = FindObjectOfType<Stages>(); // Find Stages in the scene
     }
 
     public void StartConversation()
@@ -67,6 +67,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         nextButton.gameObject.SetActive(false);
         canvas.SetActive(false);
-        Debug.Log("End of Conversation");
+        if (stages != null) {
+          stages.FinishStage(3f);
+        }
     }
 }
