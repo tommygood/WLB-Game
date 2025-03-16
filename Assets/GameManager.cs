@@ -54,16 +54,16 @@ public class GameManager : MonoBehaviour
     {
         if (type == "work")
         {
-            // Play overwork animation
+            // FIXME: Play overwork animation
             Debug.Log("Game Over due to overworking.");
         }
         else if (type == "life")
         {
-            // Play dirt-poor animation
+            // FIXME: Play dirt-poor animation
             Debug.Log("Game Over due to lack of work-life balance.");
         }
 
-        // Play general animation
+        // FIXME: Play general animation
         Debug.Log("Game Over! You lost. There is no perfect answer in life’s choices.");
     }
 }
