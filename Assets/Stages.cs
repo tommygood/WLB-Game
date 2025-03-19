@@ -7,6 +7,7 @@ public class Stages : MonoBehaviour
     public BalanceBar balanceBar;
     public DialogueManager dialogue_manager;
     public Meeting meeting;
+    public PostOrSaveCat postOrSaveCat;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,9 @@ public class Stages : MonoBehaviour
               case 2:
                   Stage_2();
                   break;
+              case 3:
+                  Stage_3();
+                  break;
               default:
                   Debug.Log("All Stages Completed!");
                   break;
@@ -48,6 +52,13 @@ public class Stages : MonoBehaviour
         Debug.Log("Stage 2 started!");
         meeting.gameObject.SetActive(true);
         meeting.Play();
+    }
+
+    public void Stage_3()
+    {
+        Debug.Log("Stage 3 started!");
+        postOrSaveCat.gameObject.SetActive(true);
+        postOrSaveCat.Play();
     }
 
     public void FinishStage(float interval)

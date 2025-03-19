@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     private int currentDialogueIndex = 0;
     private int currentSentenceIndex = 0;
     private Stages stages;
+    private bool finishStage = true;
 
     void Start()
     {
@@ -29,12 +30,17 @@ public class DialogueManager : MonoBehaviour
         stages = FindObjectOfType<Stages>(); // Find Stages in the scene
     }
 
-    public void StartConversation()
+    public void StartConversation(bool finishStage = true)
     {
+      this.finishStage = finishStage;
+      // log the dialogues list
+      Debug.Log("Dialogues: " + dialogues);
+      for (int i = 0; i < dialogues.Count; i++) {
+        Debug.Log("Dialogues[" + i + "]: " + dialogues[i].sentences);
+      }
+
         if (dialogues.Count > 0)
         {
-            currentDialogueIndex = 0;
-            currentSentenceIndex = 0;
             DisplayNextSentence();
         }
     }
@@ -45,6 +51,11 @@ public class DialogueManager : MonoBehaviour
         {
             EndConversation();
             return;
+        }
+        if (canvas.activeSelf == false)
+        {
+            canvas.SetActive(true);
+            nextButton.gameObject.SetActive(true);
         }
 
         Dialogue currentDialogue = dialogues[currentDialogueIndex];
@@ -68,7 +79,9 @@ public class DialogueManager : MonoBehaviour
         nextButton.gameObject.SetActive(false);
         canvas.SetActive(false);
         if (stages != null) {
-          stages.FinishStage(3f);
+          if (finishStage) {
+            stages.FinishStage(3f);
+          }
         }
     }
 }
