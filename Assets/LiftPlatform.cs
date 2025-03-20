@@ -15,14 +15,14 @@ public class LiftPlatform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-      Debug.Log("LiftPlatform: OnTriggerEnter");
+      // Debug.Log("LiftPlatform: OnTriggerEnter");
       stay_time = 0f;
       isPlayerOnPlatform = false;
     }
 
     private void OnTriggerExit(Collider other)
     {
-      Debug.Log("LiftPlatform: OnTriggerExit");
+      // Debug.Log("LiftPlatform: OnTriggerExit");
       stay_time = 0f;
       isPlayerOnPlatform = false;
     }

@@ -16,7 +16,6 @@ public class ComputerController : MonoBehaviour
     {
       if (true) // FIXME: check if primary button is pressed
       {
-        Debug.Log("is boot called: " + isBootCalled);
         if (bootDetector.detectedObject != null) {
           Debug.Log("Computer is booting up.");
           isBootCalled = !isBootCalled;

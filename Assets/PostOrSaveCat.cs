@@ -6,6 +6,8 @@ public class PostOrSaveCat : MonoBehaviour
     private bool isBossCalled = false;
     public DialogueManager dialogue_manager;
 
+    public TriggerDetector catTrigger;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +19,11 @@ public class PostOrSaveCat : MonoBehaviour
             sentences = new string[] { "Post a poster to officer room." }
         });
         dialogue_manager.StartConversation(false);
+      }
+
+      if (catTrigger.detectedObject != null) {
+        Debug.Log("Save the Catttttttttttttttt");
+        // FIXME: add the drop down animation
       }
     }
 

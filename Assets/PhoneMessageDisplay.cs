@@ -14,6 +14,10 @@ public class PhoneMessageDisplay : MonoBehaviour
     private List<string> messageList = new List<string>(); // Stores all messages
     public bool isExpanded = false;
 
+    public PhoneButtonDetector phoneButtonDetector;
+
+    private string text = "NULL";
+
     void Start()
     {
         // UpdateDisplay(); // Ensure UI is updated at the start
@@ -22,8 +26,10 @@ public class PhoneMessageDisplay : MonoBehaviour
     public void Update()
     {
         if (isExpanded) {
-          ShowFullMessage("This is a test message.");
+          Debug.Log("Trigger the phone button ~~~~~~~~~~~~~~~~~~~~~~~~~~");
+          ShowFullMessage(this.text);
           isExpanded = false;
+          phoneButtonDetector.stopDetection = true;
         }
     }
 
@@ -66,6 +72,9 @@ public class PhoneMessageDisplay : MonoBehaviour
       string character = s[(s.Length-1)-2];
       string text = s[(s.Length-1)-1];
       button_text.text = character; // Display messages with line breaks
+      phoneButtonDetector.stopDetection = false;
+      this.text = text;
+      Debug.Log("phone start!" + text);
       // button.onClick.RemoveAllListeners();
       // button.onClick.AddListener(() => ShowFullMessage(text));
     }
@@ -74,7 +83,7 @@ public class PhoneMessageDisplay : MonoBehaviour
     private void ShowFullMessage(string fullMessage)
     {
         textExpansion.text = fullMessage;
-        Invoke("ClearTextExpansion", 3);   
+        Invoke("ClearTextExpansion", 7);   
     }
 
     public void ClearTextExpansion() {
