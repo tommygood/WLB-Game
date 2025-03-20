@@ -12,10 +12,19 @@ public class PhoneMessageDisplay : MonoBehaviour
     public Button button_2;
     public int maxMessages = 20; // Limit the number of messages displayed
     private List<string> messageList = new List<string>(); // Stores all messages
+    public bool isExpanded = false;
 
     void Start()
     {
         // UpdateDisplay(); // Ensure UI is updated at the start
+    }
+
+    public void Update()
+    {
+        if (isExpanded) {
+          ShowFullMessage("This is a test message.");
+          isExpanded = false;
+        }
     }
 
     // Function to add a message from other scripts
@@ -57,8 +66,8 @@ public class PhoneMessageDisplay : MonoBehaviour
       string character = s[(s.Length-1)-2];
       string text = s[(s.Length-1)-1];
       button_text.text = character; // Display messages with line breaks
-      button.onClick.RemoveAllListeners();
-      button.onClick.AddListener(() => ShowFullMessage(text));
+      // button.onClick.RemoveAllListeners();
+      // button.onClick.AddListener(() => ShowFullMessage(text));
     }
 
     // Function to replace the button with full text

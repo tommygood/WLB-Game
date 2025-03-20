@@ -15,7 +15,7 @@ public class PosterTemplate : MonoBehaviour
     {
         // detect the distance between the poster and the template
         float distance = Vector3.Distance(poster.position, template.position);
-        Debug.Log("Distance: " + distance);
+        // Debug.Log("Distance: " + distance);
         // if the distance is less than 0.1f
         if (distance < 0.2f)
         {
