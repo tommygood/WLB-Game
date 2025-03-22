@@ -30,17 +30,17 @@ public class LiftPlatform : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
       stay_time += Time.deltaTime;
-      if (stay_time > 5f && !isPlayerOnPlatform) {
+      if (stay_time > 10f && !isPlayerOnPlatform) {
+        isPlayerOnPlatform = true;
+        stay_time = 0f;
         XROrigin xrOrigin = FindObjectOfType<XROrigin>();
         Debug.Log("LiftPlatform: xrOrigin.transform.position.y: " + xrOrigin.transform.position.y);
-        Debug.Log(0.02279997f < lift_or_down);
         if (!isUp) {
           StartCoroutine(LiftPlayer(xrOrigin.transform));
         }
         else {
           StartCoroutine(DownPlayer(xrOrigin.transform));
         }
-        isPlayerOnPlatform = true;
         isUp = !isUp;
       }
     }

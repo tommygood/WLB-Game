@@ -10,6 +10,8 @@ public class ElevatorDoor : MonoBehaviour
     public float doorSpeed = 1f; // Speed of movement
     public float openDistance = 2f; // How far the door moves
 
+    public bool autoDetected = false;
+
     private Vector3 closedPosition;
     private Vector3 openPosition;
     private bool isPlayerNear;
@@ -33,15 +35,18 @@ public class ElevatorDoor : MonoBehaviour
 
     void Update()
     {
-        // Detect VR player's head position
-        if (Camera.main != null)
-        {
-            Vector3 playerPos = Camera.main.transform.position;
-            float distance = Vector3.Distance(playerPos, transform.position);
-            isPlayerNear = distance < detectionRange;
-        }
+        if (autoDetected) {
 
-        // Move doors based on player proximity
-        transform.position = Vector3.Lerp(transform.position, isPlayerNear ? openPosition : closedPosition, Time.deltaTime * doorSpeed);
+            // Detect VR player's head position
+            if (Camera.main != null)
+            {
+                Vector3 playerPos = Camera.main.transform.position;
+                float distance = Vector3.Distance(playerPos, transform.position);
+                isPlayerNear = distance < detectionRange;
+            }
+
+            // Move doors based on player proximity
+            transform.position = Vector3.Lerp(transform.position, isPlayerNear ? openPosition : closedPosition, Time.deltaTime * doorSpeed);
+        }
     }
 }

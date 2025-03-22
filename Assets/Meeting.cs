@@ -37,12 +37,11 @@ public class Meeting : MonoBehaviour
       if (triggerDetector2.detectedObject != null && !isGFCalled) {
         if (phone != null)
         {
-          phone.AddMessage("GF", "hi, would you like to chatting with me ?");
+          phone.AddMessage("GF", "hi, would you like to chatting with me ?", true);
           isGFCalled = true;
         }
         stages.FinishStage(3f);
         Debug.Log("Meeting Room task succeed.");
-        this.enabled = false; // stop iterating the Update function
       }
     }
 
