@@ -27,7 +27,7 @@ public class Meeting : MonoBehaviour
         this.enabled = false; // stop iterating the Update function
       }
       if (triggerDetector1.detectedObject != null && !isBossCalled) {
-        if (phone != null)
+        if (phone != null && triggerDetector1.detectedObject.name == "Body")
         {
           phone.AddMessage("Boss", "boss_1");
           isBossCalled = true;
@@ -35,13 +35,13 @@ public class Meeting : MonoBehaviour
       }
 
       if (triggerDetector2.detectedObject != null && !isGFCalled) {
-        if (phone != null)
+        if (phone != null && triggerDetector2.detectedObject.name == "Body")
         {
           phone.AddMessage("GF", "gf_1", true);
           isGFCalled = true;
+          stages.FinishStage(5f);
+          Debug.Log("Meeting Room task succeed.");
         }
-        stages.FinishStage(5f);
-        Debug.Log("Meeting Room task succeed.");
       }
     }
 

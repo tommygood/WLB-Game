@@ -26,14 +26,15 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        nextButton.onClick.AddListener(DisplayNextSentence);
-        stages = FindObjectOfType<Stages>(); // Find Stages in the scene
+        // nextButton.onClick.AddListener(DisplayNextSentence);
+        // stages = FindObjectOfType<Stages>(); // Find Stages in the scene
     }
 
     public void StartConversation(bool finishStage = true)
     {
-      this.finishStage = finishStage;
+      // this.finishStage = finishStage;
       // log the dialogues list
+      /*
       Debug.Log("Dialogues: " + dialogues);
       for (int i = 0; i < dialogues.Count; i++) {
         Debug.Log("Dialogues[" + i + "]: " + dialogues[i].sentences);
@@ -42,6 +43,12 @@ public class DialogueManager : MonoBehaviour
         if (dialogues.Count > 0)
         {
             DisplayNextSentence();
+        }
+        */
+        if (stages != null) {
+          if (finishStage) {
+            stages.FinishStage(3f);
+          }
         }
     }
     

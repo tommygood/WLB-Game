@@ -4,7 +4,7 @@ public class Stages : MonoBehaviour
 {
     public bool currentStageFinished = true; // Use 'bool' instead of 'boolean'
     private int currentStage = 0; // Track the current stage
-    public BalanceBar balanceBar;
+    // public BalanceBar balanceBar;
     public DialogueManager dialogue_manager;
     public Meeting meeting;
     public PostOrSaveCat postOrSaveCat;
@@ -70,7 +70,9 @@ public class Stages : MonoBehaviour
       currentStageFinished = true; // Flag to proceed to the next stage
     }
 
+    /*
     public void setBalanceBar(float val) {
       balanceBar.setBalanceBar(val);
     }
+    */
 }
