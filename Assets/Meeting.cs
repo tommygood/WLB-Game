@@ -29,7 +29,7 @@ public class Meeting : MonoBehaviour
       if (triggerDetector1.detectedObject != null && !isBossCalled) {
         if (phone != null)
         {
-          phone.AddMessage("Boss", "hello, plz come to the office to join a meet in a minute.");
+          phone.AddMessage("Boss", "boss_1");
           isBossCalled = true;
         }
       }
@@ -37,10 +37,10 @@ public class Meeting : MonoBehaviour
       if (triggerDetector2.detectedObject != null && !isGFCalled) {
         if (phone != null)
         {
-          phone.AddMessage("GF", "hi, would you like to chatting with me ?", true);
+          phone.AddMessage("GF", "gf_1", true);
           isGFCalled = true;
         }
-        stages.FinishStage(3f);
+        stages.FinishStage(5f);
         Debug.Log("Meeting Room task succeed.");
       }
     }

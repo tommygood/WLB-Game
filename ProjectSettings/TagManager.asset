@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - gf_1
+  - boss_1
   layers:
   - Default
   - TransparentFX

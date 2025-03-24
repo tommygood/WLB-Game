@@ -33,7 +33,20 @@ public class PhoneMessageDisplay : MonoBehaviour
     public void Update()
     {
         if (isExpanded) {
-          ShowFullMessage(this.text);
+          ShowFullMessage("");
+          // Find the first object with the given tag
+          GameObject targetObject = GameObject.FindGameObjectWithTag(this.text);
+
+          if (targetObject != null)
+          {
+              // Do something with the found object
+              Debug.Log("Found object: " + targetObject.name);
+              AudioSource audioSource = targetObject.GetComponent<AudioSource> ();
+              audioSource.Play();
+          }
+          else {
+            Debug.Log("audio object not found !!!!!!!!:" + this.text);
+          }
           isExpanded = false;
           phoneButtonDetector_Boss.stopDetection = true;
           phoneButtonDetector_GF.stopDetection = true;

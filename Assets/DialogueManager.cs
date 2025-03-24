@@ -44,6 +44,36 @@ public class DialogueManager : MonoBehaviour
             DisplayNextSentence();
         }
     }
+    
+    public void DisplayNextSentenceInAudio() {
+        if (currentDialogueIndex >= dialogues.Count)
+        {
+            EndConversation();
+            return;
+        }
+
+        Dialogue currentDialogue = dialogues[currentDialogueIndex];
+
+        if (currentSentenceIndex < currentDialogue.sentences.Length)
+        {
+            // Find the first object with the given tag
+            GameObject targetObject = GameObject.FindGameObjectWithTag(currentDialogue.sentences[currentSentenceIndex]);
+
+            if (targetObject != null)
+            {
+                // Do something with the found object
+                Debug.Log("Found object: " + targetObject.name);
+                targetObject.SetActive(true);
+            }
+            currentSentenceIndex++;
+        }
+        else
+        {
+            currentDialogueIndex++;
+            currentSentenceIndex = 0;
+            DisplayNextSentenceInAudio();
+        }
+    }
 
     public void DisplayNextSentence()
     {
