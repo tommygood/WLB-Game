@@ -7,6 +7,7 @@ TagManager:
   - Anchor
   - gf_1
   - boss_1
+  - LastTemplate
   layers:
   - Default
   - TransparentFX

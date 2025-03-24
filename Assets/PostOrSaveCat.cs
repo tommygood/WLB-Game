@@ -8,6 +8,13 @@ public class PostOrSaveCat : MonoBehaviour
 
     public TriggerDetector catTrigger;
 
+    private Stages stages;
+
+    void Start()
+    {
+        stages = FindObjectOfType<Stages>(); // Find Stages in the scene
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +31,9 @@ public class PostOrSaveCat : MonoBehaviour
       if (catTrigger.detectedObject != null) {
         Debug.Log("Save the Catttttttttttttttt");
         // FIXME: add the drop down animation
+        if (stages != null) { 
+          stages.FinishStage(8f);
+        }
       }
     }
 
