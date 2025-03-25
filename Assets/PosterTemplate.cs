@@ -22,6 +22,8 @@ public class PosterTemplate : MonoBehaviour
         {
             // set the poster on the template
             poster.position = template.position;
+            Rigidbody rb = poster.GetComponent<Rigidbody>();
+            rb.isKinematic = true;
             // set the poster rotation to the template rotation
             poster.rotation = template.rotation;
             if (template.gameObject.tag == "LastTemplate") {

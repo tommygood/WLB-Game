@@ -24,6 +24,7 @@ public class PhoneMessageDisplay : MonoBehaviour
     private string text = "NULL";
 
     private bool autoDetected = false;
+    private GameObject audio;
 
     void Start()
     {
@@ -34,8 +35,13 @@ public class PhoneMessageDisplay : MonoBehaviour
     {
         if (isExpanded) {
           ShowFullMessage("");
-          // Find the first object with the given tag
+            // Find the first object with the given tag
+            if (this.text == "NULL")
+            {
+                return;
+            }
           GameObject targetObject = GameObject.FindGameObjectWithTag(this.text);
+            audio = targetObject;
 
           if (targetObject != null)
           {
@@ -51,10 +57,26 @@ public class PhoneMessageDisplay : MonoBehaviour
           phoneButtonDetector_Boss.stopDetection = true;
           phoneButtonDetector_GF.stopDetection = true;
           if (this.autoDetected) {
-            elevatorDoor_L.autoDetected = true;
-            elevatorDoor_R.autoDetected = true;
+            Invoke("setElevatorDoorAutoDetected", 10f);
+            Invoke("DisableAudio", 11f);
+            this.autoDetected = false;
           }
         }
+    }
+
+    private void DisableAudio()
+    {
+        if (audio != null)
+        {
+            audio.SetActive(false);
+            audio = null;
+        }
+    }
+
+    private void setElevatorDoorAutoDetected()
+    {
+        elevatorDoor_L.autoDetected = true;
+        elevatorDoor_R.autoDetected = true;
     }
 
     // Function to add a message from other scripts
