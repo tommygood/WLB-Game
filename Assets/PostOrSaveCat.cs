@@ -63,7 +63,7 @@ public class PostOrSaveCat : MonoBehaviour
                 Debug.Log("touch the EARTHHHHHHHHHHHHHHHHHHHHHHH");
                 audio_fall_down.SetActive(true);
                 blackscreen.SetActive(true);
-                Invoke("SetupNewScene", 3f);
+                Invoke("SetupNewScene", 6f);
             }
             yield return null; // Wait for next frame
         }

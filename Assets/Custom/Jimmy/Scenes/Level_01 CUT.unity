@@ -103022,7 +103022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.889
+      value: 54.915
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.y
@@ -103030,7 +103030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 67.355
+      value: 67.618
       objectReference: {fileID: 0}
     - target: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.w
@@ -169117,8 +169117,8 @@ MonoBehaviour:
   xrOrigin: {fileID: 2779669268269126898}
   catTrigger: {fileID: 1949898052}
   targetY: 0
-  dropSpeed: 0.5
-  rotateSpeed: 30
+  dropSpeed: 1.5
+  rotateSpeed: 15
   blackscreen: {fileID: 247258830}
   audio_fall_down: {fileID: 1160493172}
 --- !u!4 &2085809057

@@ -61,7 +61,7 @@ public class PhoneMessageDisplay : MonoBehaviour
           phoneButtonDetector_Boss.stopDetection = true;
           phoneButtonDetector_GF.stopDetection = true;
           if (this.autoDetected) {
-            Invoke("setElevatorDoorAutoDetected", 10f);
+            Invoke("setElevatorDoorAutoDetected", 13f);
             Invoke("DisableAudio", 13f);
             this.autoDetected = false;
           }

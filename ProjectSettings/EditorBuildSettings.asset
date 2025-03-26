@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Custom/Jimmy/Scenes/LEVEL_01_SnowMountain.unity
     guid: 3281ef500ae8df44a86760ecfdd4e4fd
+  - enabled: 1
+    path: Assets/Custom/Jimmy/Scenes/Level_02.unity
+    guid: 3361dd49b16b20341a1082c09f8d09cb
+  - enabled: 1
+    path: Assets/Custom/Jimmy/Scenes/LEVEL_02_SnowMountain 1.unity
+    guid: 28f705a70ff848c448928cb7b421f7e2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
