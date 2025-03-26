@@ -84299,7 +84299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorSide: 0
-  detectionRange: 1.6
+  detectionRange: 3.5
   doorSpeed: 1
   openDistance: 2.5
   autoDetected: 0
@@ -106781,7 +106781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorSide: 1
-  detectionRange: 1.6
+  detectionRange: 3.5
   doorSpeed: 1
   openDistance: 2.5
   autoDetected: 0
