@@ -61,6 +61,7 @@ public class PostOrSaveCat : MonoBehaviour
             {
                 Debug.Log("touch the EARTHHHHHHHHHHHHHHHHHHHHHHH");
                 blackscreen.SetActive(true);
+                SceneLoader.Instance.UnloadCurrentScene("Demo");
             }
             yield return null; // Wait for next frame
         }

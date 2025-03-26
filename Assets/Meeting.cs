@@ -19,7 +19,7 @@ public class Meeting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      Vector3 playerPosition = Camera.main.transform.position;
+        Vector3 playerPosition = Camera.main.transform.position;
       Vector3 meetingRoomPos = new Vector3(0f, 1.5f, -5f);
       if (playerPosition == meetingRoomPos) {
         stages.FinishStage(3f);

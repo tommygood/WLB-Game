@@ -12413,6 +12413,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2478550239312682541, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_ClimbSettingsOverride.m_ConstantValue.m_AllowFreeXMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2478550239312682541, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_ClimbSettingsOverride.m_ConstantValue.m_AllowFreeZMovement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3110611373604643039, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.255
@@ -87900,6 +87908,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 688836324}
     m_Modifications:
+    - target: {fileID: 2177308449197577270, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45202896
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177308449197577270, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177308449197577270, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.637
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177308449197577270, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013495666256952966, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4652268
+      objectReference: {fileID: 0}
     - target: {fileID: 4223635557334411916, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.65142
@@ -87940,9 +87968,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.927
       objectReference: {fileID: 0}
+    - target: {fileID: 4479397534192911667, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.52447224
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665287053250384675, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07496931
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101209706677052610, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57369477
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632146717278354137, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7679759
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632146717278354137, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632146717278354137, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.595
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632146717278354137, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 6209309998178532447, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
       propertyPath: m_Name
       value: Ladder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943030676772847225, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.46415183
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943030676772847225, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943030676772847225, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943030676772847225, guid: b3830b3b2f190ee46a9c88433e985221, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -97765,7 +97837,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerDetector1: {fileID: 1339428293}
   dialogue_manager: {fileID: 25559197}
+  xrOrigin: {fileID: 0}
   catTrigger: {fileID: 1703986934}
+  targetY: 0
+  dropSpeed: 0.5
+  rotateSpeed: 30
+  blackscreen: {fileID: 0}
 --- !u!4 &1324202926
 Transform:
   m_ObjectHideFlags: 0

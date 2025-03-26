@@ -83900,7 +83900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorSide: 0
-  detectionRange: 1.6
+  detectionRange: 2
   doorSpeed: 1
   openDistance: 2.5
   autoDetected: 0
@@ -100550,6 +100550,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6194419309965692413, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6392924078911962488, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_AttachTransform
       value: 
@@ -106245,7 +106249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorSide: 1
-  detectionRange: 1.6
+  detectionRange: 2
   doorSpeed: 1
   openDistance: 2.5
   autoDetected: 0
