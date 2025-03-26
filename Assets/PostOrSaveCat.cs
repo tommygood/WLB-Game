@@ -18,6 +18,7 @@ public class PostOrSaveCat : MonoBehaviour
     public float rotateSpeed = 30; // Rotation speed
     private bool saveCat = false;
     public GameObject blackscreen;
+    public GameObject audio_fall_down;
 
     void Start()
     {
@@ -62,6 +63,7 @@ public class PostOrSaveCat : MonoBehaviour
                 Debug.Log("touch the EARTHHHHHHHHHHHHHHHHHHHHHHH");
                 blackscreen.SetActive(true);
                 SceneLoader.Instance.UnloadCurrentScene("Demo");
+                audio_fall_down.SetActive(true);
             }
             yield return null; // Wait for next frame
         }

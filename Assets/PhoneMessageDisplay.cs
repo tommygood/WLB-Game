@@ -20,6 +20,9 @@ public class PhoneMessageDisplay : MonoBehaviour
 
     public ElevatorDoor elevatorDoor_L;
     public ElevatorDoor elevatorDoor_R;
+    public GameObject elevator_running;
+    public GameObject elevator_arriving;
+    public GameObject audio_phone_ring;
 
     private string text = "NULL";
 
@@ -40,7 +43,8 @@ public class PhoneMessageDisplay : MonoBehaviour
             {
                 return;
             }
-          GameObject targetObject = GameObject.FindGameObjectWithTag(this.text);
+            audio_phone_ring.SetActive(false);
+            GameObject targetObject = GameObject.FindGameObjectWithTag(this.text);
             audio = targetObject;
 
           if (targetObject != null)
@@ -77,6 +81,8 @@ public class PhoneMessageDisplay : MonoBehaviour
     {
         elevatorDoor_L.autoDetected = true;
         elevatorDoor_R.autoDetected = true;
+        elevator_arriving.SetActive(true);
+        elevator_running.SetActive(false);
     }
 
     // Function to add a message from other scripts
@@ -96,6 +102,7 @@ public class PhoneMessageDisplay : MonoBehaviour
             messageList_Boss.RemoveAt(0);
         }
         button_1.image.color = Color.red; // Change to any color
+        audio_phone_ring.SetActive(true);
       }
       else if (character == "GF") {
         // Add message to the list

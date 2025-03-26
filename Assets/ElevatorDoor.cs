@@ -6,7 +6,7 @@ public class ElevatorDoor : MonoBehaviour
     public enum DoorType { Left, Right } // To identify door side
     public DoorType doorSide; // Assign in the Inspector
 
-    public float detectionRange = 2f; // Player detection range
+    public float detectionRange = 1.6f; // Player detection range
     public float doorSpeed = 1f; // Speed of movement
     public float openDistance = 2f; // How far the door moves
 
@@ -16,6 +16,9 @@ public class ElevatorDoor : MonoBehaviour
     private Vector3 openPosition;
     private bool isPlayerNear;
     private bool isPlayerBehind;
+    public GameObject elevator_opening;
+    private bool is_opened = false;
+    private float last_changed = 0f;
 
     void Start()
     {
@@ -35,7 +38,9 @@ public class ElevatorDoor : MonoBehaviour
 
     void Update()
     {
-        if (autoDetected) {
+        last_changed += Time.deltaTime;
+        if (autoDetected)
+        {
 
             // Detect VR player's head position
             if (Camera.main != null)
@@ -43,12 +48,34 @@ public class ElevatorDoor : MonoBehaviour
                 Vector3 playerPos = Camera.main.transform.position;
                 float distance = Vector3.Distance(playerPos, transform.position);
                 isPlayerNear = distance < detectionRange;
-            }
-            Debug.Log("is player near");
-            Debug.Log(isPlayerNear);
+                bool is_current_opened = isPlayerNear;
+                if (is_opened != is_current_opened)
+                {
+                    if (last_changed < 3f)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        last_changed = 0f;
+                        is_opened = is_current_opened;
+                    }
+                }
 
-            // Move doors based on player proximity
-            transform.position = Vector3.Lerp(transform.position, isPlayerNear ? openPosition : closedPosition, Time.deltaTime * doorSpeed);
+                if (isPlayerNear)
+                {
+                    elevator_opening.SetActive(true);
+                    is_opened = true;
+                }
+                else
+                {
+                    elevator_opening.SetActive(false);
+                }
+                Debug.Log("is player near");
+                Debug.Log(distance);
+                // Move doors based on player proximity
+                transform.position = Vector3.Lerp(transform.position, isPlayerNear ? openPosition : closedPosition, Time.deltaTime * doorSpeed);
+            }
         }
     }
 }
