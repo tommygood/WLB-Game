@@ -12153,6 +12153,9 @@ MonoBehaviour:
   phoneButtonDetector_GF: {fileID: 41792523}
   elevatorDoor_L: {fileID: 0}
   elevatorDoor_R: {fileID: 0}
+  elevator_running: {fileID: 0}
+  elevator_arriving: {fileID: 0}
+  audio_phone_ring: {fileID: 0}
 --- !u!114 &1421264059
 MonoBehaviour:
   m_ObjectHideFlags: 0

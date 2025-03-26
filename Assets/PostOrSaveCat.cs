@@ -61,12 +61,20 @@ public class PostOrSaveCat : MonoBehaviour
             if (xrOrigin.position.y <= targetY)
             {
                 Debug.Log("touch the EARTHHHHHHHHHHHHHHHHHHHHHHH");
-                blackscreen.SetActive(true);
-                SceneLoader.Instance.UnloadCurrentScene("Demo");
                 audio_fall_down.SetActive(true);
+                blackscreen.SetActive(true);
+                Invoke("SetupNewScene", 3f);
             }
             yield return null; // Wait for next frame
         }
+    }
+
+    private void SetupNewScene()
+    {
+        SceneLoader.Instance.LoadNewScene("Assets/Custom/Jimmy/Scenes/LEVEL_01_SnowMountain.unity");
+        SceneLoader.Instance.UnloadCurrentScene("Demo");
+        SceneLoader.Instance.UnloadCurrentScene("City CUT");
+        SceneLoader.Instance.UnloadCurrentScene("Level_01 CUT");
     }
 
     public void Play() {

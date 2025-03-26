@@ -6,7 +6,7 @@ public class ElevatorDoor : MonoBehaviour
     public enum DoorType { Left, Right } // To identify door side
     public DoorType doorSide; // Assign in the Inspector
 
-    public float detectionRange = 1.6f; // Player detection range
+    public float detectionRange = 2.5f; // Player detection range
     public float doorSpeed = 1f; // Speed of movement
     public float openDistance = 2f; // How far the door moves
 
