@@ -25,6 +25,7 @@ public class NPCTimelineTrigger : MonoBehaviour
         if(other.gameObject.tag == "Player") {
             Debug.Log(other.name);
             NPCTimeline.Play();
+            gameObject.SetActive(false);
         }
     }
 }
